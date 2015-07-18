@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="./enchant.js"></script>
+    <script type="text/javascript" src="./cell.js"></script>
+    <script type="text/javascript">
+    enchant();
+    var core;
+    window.onload = function(){
+        core = new Core(500, 500);
+        lifeCell.Method.init();
+        core.onload = function(){
+            core.rootScene.addEventListener('enterframe', function(){
+                    lifeCell.Method.calcCellsNextState();
+                    lifeCell.Method.injectCellsNextState();
+            });
+        };
+        core.start();
+    };
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
